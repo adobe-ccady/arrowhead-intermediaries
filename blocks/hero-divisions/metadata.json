@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-divisions",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-17T20:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/",
+    "originPage": "Arrowhead Intermediaries homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "background-video"
+  },
+  "contentPattern": {
+    "structure": "heading + intro paragraph + 3 quick-link buttons",
+    "buttonCount": 3,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-width intro hero with media background",
+      "homepage hero with tagline and quick links"
+    ],
+    "notSuitableFor": [
+      "text-only blog hero",
+      "compact inline banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-17T20:06:00.000Z"
+  }
+}

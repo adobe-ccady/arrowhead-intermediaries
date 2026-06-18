@@ -1,20 +1,109 @@
+/* Footer: full-width navy band, white logo + text, pipe-separated legal links.
+ * Values extracted from source computed styles (#1b2a51 bg, white 13px text).
+ */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #1b2a51;
+  color: #fff;
+  font-size: 13px;
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1400px;
+  padding: 30px;
 }
 
-footer .footer p {
-  margin: 0;
-}
-
+/* Two-column layout: info on the left, legal links on the right (matches source). */
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
   }
+
+  footer .footer .footer-info {
+    flex: 1 1 auto;
+  }
+
+  /* legal links align to the bottom of the footer band (matches source) */
+  footer .footer .footer-legal {
+    flex: 0 0 auto;
+    align-self: flex-end;
+  }
+}
+
+/* Brand / info section */
+footer .footer .footer-info p {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+footer .footer .footer-info p:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer .footer-info img {
+  display: block;
+  width: auto;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+footer .footer .footer-info a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer .footer-info a:hover {
+  text-decoration: underline;
+}
+
+/* Legal links row: inline list separated by pipe characters */
+footer .footer .footer-legal {
+  padding-top: 0;
+}
+
+footer .footer .footer-legal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+}
+
+/* Desktop: legal links sit in the right column, right-aligned. */
+@media (width >= 900px) {
+  footer .footer .footer-legal ul {
+    justify-content: flex-end;
+  }
+}
+
+footer .footer .footer-legal li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* pipe separator between items (not after the last) */
+footer .footer .footer-legal li:not(:last-child)::after {
+  content: '|';
+  margin-left: 20px;
+  color: rgb(255 255 255 / 60%);
+}
+
+footer .footer .footer-legal a:any-link {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+footer .footer .footer-legal a:hover {
+  text-decoration: underline;
 }

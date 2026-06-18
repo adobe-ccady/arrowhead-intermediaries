@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://arrowheadintermediaries.com/",
+  "path": "index",
+  "timestamp": "2026-06-18T02:27:32.114Z",
+  "title": "Home - Arrowhead Intermediaries",
+  "template": "homepage",
+  "blocks": [
+    "hero-divisions",
+    "columns-stats",
+    "tabs-story",
+    "columns-banner",
+    "cards-divisions",
+    "cards-news"
+  ]
+}

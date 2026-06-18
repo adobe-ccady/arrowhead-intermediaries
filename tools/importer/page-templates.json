@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://arrowheadintermediaries.com/"
+      ],
+      "representativeUrl": "https://arrowheadintermediaries.com/",
+      "coverageGaps": [],
+      "description": "Arrowhead Intermediaries homepage: header nav, hero with tagline and division quick-links, statistics, our-story tabs, leadership banner, division cards, news cards, footer",
+      "blocks": [
+        {
+          "name": "hero-divisions",
+          "instances": [
+            "#content > div.page-content > div.elementor.elementor-22 > div.elementor-element.elementor-element-a46922b.e-con-full.e-flex.e-con.e-parent.e-lazyloaded"
+          ]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [
+            "#numbers"
+          ]
+        },
+        {
+          "name": "tabs-story",
+          "instances": [
+            "#content > div.page-content > div.elementor.elementor-22 > div.elementor-element.elementor-element-2e9cfdd.e-flex.e-con-boxed.e-con.e-parent"
+          ]
+        },
+        {
+          "name": "columns-banner",
+          "instances": [
+            "#our-leaders"
+          ]
+        },
+        {
+          "name": "cards-divisions",
+          "instances": [
+            "#our-divisions"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            "#news"
+          ]
+        },
+        {
+          "name": "section-statistics",
+          "instances": [
+            "#numbers"
+          ],
+          "section": "stats"
+        },
+        {
+          "name": "section-divisions",
+          "instances": [
+            "#our-divisions"
+          ],
+          "section": "divisions-background-image"
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "hero",
+          "selector": "#content > div.page-content > div.elementor.elementor-22 > div.elementor-element.elementor-element-a46922b.e-con-full.e-flex.e-con.e-parent.e-lazyloaded",
+          "style": null,
+          "blocks": [
+            "hero-divisions"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "statistics",
+          "name": "statistics",
+          "selector": "#numbers",
+          "style": "stats",
+          "blocks": [
+            "columns-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "read-our-story-intro",
+          "name": "read-our-story-intro",
+          "selector": "#our-story",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#our-story h3",
+            "#our-story p"
+          ]
+        },
+        {
+          "id": "our-story-tabs",
+          "name": "our-story-tabs",
+          "selector": "#content > div.page-content > div.elementor.elementor-22 > div.elementor-element.elementor-element-2e9cfdd.e-flex.e-con-boxed.e-con.e-parent",
+          "style": null,
+          "blocks": [
+            "tabs-story"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "leadership-banner",
+          "name": "leadership-banner",
+          "selector": "#our-leaders",
+          "style": null,
+          "blocks": [
+            "columns-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "explore-our-divisions",
+          "name": "explore-our-divisions",
+          "selector": "#our-divisions",
+          "style": "divisions-background-image",
+          "blocks": [
+            "cards-divisions"
+          ],
+          "defaultContent": [
+            "#our-divisions h3"
+          ]
+        },
+        {
+          "id": "news",
+          "name": "news",
+          "selector": "#news",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": [
+            "#news h3"
+          ]
+        }
+      ]
+    }
+  ]
+}

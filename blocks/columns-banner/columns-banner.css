@@ -1,0 +1,116 @@
+/*
+ * columns-banner -- "Meet our leaders" leadership banner.
+ * Full-width navy band with a two-column layout: leadership photo (left)
+ * and heading + paragraph + CTA (right). Values extracted from the source
+ * #our-leaders section computed styles.
+ */
+
+/* Full-bleed navy band: override the 1200px section constraint */
+.columns-banner-wrapper {
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-color);
+}
+
+/* Constrain inner content to 1200px and apply the vertical band padding */
+.columns-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Stacked on mobile: image first, text second */
+.columns-banner > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-banner > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image cell first */
+.columns-banner > div > .columns-banner-img-col {
+  order: 0;
+}
+
+.columns-banner img {
+  display: block;
+  width: 100%;
+}
+
+/* Headings: white, brand heading scale */
+.columns-banner h3 {
+  margin: 0 0 0.25em;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  line-height: 1.22;
+  color: #fff;
+}
+
+/* Paragraph: white body copy */
+.columns-banner p {
+  margin: 0 0 20px;
+  font-size: 17px;
+  line-height: 28px;
+  color: #fff;
+}
+
+/* CTA: light pill-free button (square) with uppercase label + arrow.
+   Overrides the global a.button navy-pill styling. */
+.columns-banner .button-container {
+  margin: 0;
+}
+
+.columns-banner a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 18px 25px;
+  background-color: rgb(255 255 255 / 85%);
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.columns-banner a.button:any-link::after {
+  content: "\2192"; /* right arrow */
+  font-size: 16px;
+  line-height: 1;
+}
+
+.columns-banner a.button:hover,
+.columns-banner a.button:focus {
+  background-color: rgb(255 255 255 / 100%);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Desktop: side-by-side 50/50 columns, top-aligned, 40px gap */
+@media (width >= 900px) {
+  .columns-banner {
+    padding: 80px 32px;
+  }
+
+  .columns-banner > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .columns-banner > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

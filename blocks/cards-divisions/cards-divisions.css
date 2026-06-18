@@ -1,0 +1,99 @@
+/* Block: cards-divisions
+ * "Explore our divisions" - Programs, Wholesale, Specialty.
+ * Each division is a white card with a subtle border, sitting on top of the
+ * aerial-photo section background (.divisions-background-image). Within a card
+ * the division logo sits on the left and the category heading (h4) +
+ * description sit on the right.
+ */
+
+.cards-divisions > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each division: white bordered card. Stack on mobile (logo above text). */
+.cards-divisions > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  padding: 28px 24px;
+  background-color: var(--background-color);
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 2px;
+}
+
+/* Logo cell: division logo, left aligned, constrained height. */
+.cards-divisions .cards-divisions-card-image {
+  line-height: 0;
+}
+
+.cards-divisions .cards-divisions-card-image p {
+  margin: 0;
+}
+
+.cards-divisions .cards-divisions-card-image a {
+  display: inline-block;
+}
+
+.cards-divisions .cards-divisions-card-image img {
+  width: auto;
+  max-width: 260px;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+/* Text body: category heading + description. */
+.cards-divisions .cards-divisions-card-body {
+  margin: 0;
+}
+
+.cards-divisions .cards-divisions-card-body h4 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  text-transform: none;
+}
+
+.cards-divisions .cards-divisions-card-body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--text-color);
+}
+
+/* Embedded division link rendered as bold navy inline link. */
+.cards-divisions .cards-divisions-card-body p a {
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cards-divisions .cards-divisions-card-body p a:hover {
+  text-decoration: underline;
+}
+
+/* Desktop: logo on the left, text on the right. */
+@media (width >= 900px) {
+  .cards-divisions > ul > li {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    padding: 36px 40px;
+  }
+
+  .cards-divisions .cards-divisions-card-image {
+    flex: 0 0 240px;
+  }
+
+  .cards-divisions .cards-divisions-card-body {
+    flex: 1 1 auto;
+  }
+}
