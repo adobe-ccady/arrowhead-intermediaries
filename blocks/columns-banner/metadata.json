@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-banner",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-17T20:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/",
+    "originPage": "Arrowhead Intermediaries homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + (heading + paragraph + CTA)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image + text promotional banners",
+      "side-by-side leadership / call-to-action banners"
+    ],
+    "notSuitableFor": [
+      "statistics rows",
+      "repeating card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-17T20:06:00.000Z"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "variantName": "tabs-story",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-06-17T20:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/",
+    "originPage": "Arrowhead Intermediaries homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "story-tabs",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "4 tabs, each with image + paragraph",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "switchable content panels where each tab shows an image and descriptive copy",
+      "our-story / about-us tabbed narratives"
+    ],
+    "notSuitableFor": [
+      "data tables",
+      "text-only accordions"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-17T20:06:00.000Z"
+  }
+}

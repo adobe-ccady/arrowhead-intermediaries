@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-divisions",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-17T20:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/",
+    "originPage": "Arrowhead Intermediaries homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "division",
+    "imagePattern": "logo"
+  },
+  "contentPattern": {
+    "structure": "3 cards, each with category label + linked logo + description",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "division / brand cards with logo and descriptive copy",
+      "category cards linking to external brand sites"
+    ],
+    "notSuitableFor": [
+      "article / news cards with cover photos and dates",
+      "side-by-side text banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-17T20:06:00.000Z"
+  }
+}

@@ -1,0 +1,134 @@
+/* Block: cards-news -- News article cards (3-up grid)
+ * Values extracted from source #news Elementor posts widget computed styles.
+ */
+
+.cards-news > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (width >= 900px) {
+  .cards-news > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cards-news > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(185 181 163);
+  border-radius: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+/* Cover image: full-bleed at top of card, fixed ratio */
+.cards-news .cards-news-card-image {
+  line-height: 0;
+}
+
+.cards-news .cards-news-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 386 / 153;
+  object-fit: cover;
+}
+
+/* Text content area */
+.cards-news .cards-news-card-body {
+  margin: 0;
+  padding: 10px 17px 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Headline -- navy, bold per brand */
+.cards-news .cards-news-card-body h3 {
+  margin: 0 0 15px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  color: var(--brand-navy);
+}
+
+.cards-news .cards-news-card-body h3 a:any-link {
+  color: var(--brand-navy);
+  text-decoration: none;
+}
+
+.cards-news .cards-news-card-body h3 a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Publish date -- muted gray */
+.cards-news .cards-news-card-body p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgb(120 120 120);
+}
+
+/* "READ THE POST »" read-more link -- accent, bold, pulled to bottom.
+ * EDS auto-decorates the standalone <p><a> into p.button-container > a.button,
+ * so reset the global pill-button styling back to a plain accent text link.
+ */
+.cards-news .cards-news-card-body .button-container {
+  margin: auto 0 0;
+  padding-top: 12px;
+}
+
+.cards-news .cards-news-card-body a.button:any-link {
+  display: inline;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-red);
+  text-decoration: none;
+  white-space: normal;
+}
+
+.cards-news .cards-news-card-body a.button:hover,
+.cards-news .cards-news-card-body a.button:focus {
+  background: none;
+  color: var(--brand-red);
+  text-decoration: underline;
+}
+
+/* "Load More" control: centered below the three cards. */
+.cards-news .cards-news-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.cards-news .cards-news-load-more-button {
+  margin: 0;
+  border: 1px solid var(--brand-navy);
+  border-radius: 0;
+  padding: 14px 36px;
+  background-color: transparent;
+  color: var(--brand-navy);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cards-news .cards-news-load-more-button:hover,
+.cards-news .cards-news-load-more-button:focus {
+  background-color: var(--brand-navy);
+  color: var(--background-color);
+}

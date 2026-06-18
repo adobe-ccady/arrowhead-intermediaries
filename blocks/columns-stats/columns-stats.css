@@ -1,0 +1,70 @@
+/*
+ * columns-stats block
+ *
+ * Three prominent statistics displayed in a centered row. Each stat is a
+ * large bold navy number above a smaller uppercase label. Sits on the light
+ * gray "stats" section band (background + center alignment applied in
+ * styles.css at the section level).
+ *
+ * Values extracted from source #numbers computed styles:
+ *   number: rgb(27,42,81)=navy, 50px, 600, line-height 50px, centered
+ *   label:  rgb(35,31,32)=text, 16px, 600, line-height 34px, uppercase, centered
+ *   row:    flex, space-around, gap 20px, padding 60px 0
+ */
+
+/* Row: stack on mobile, centered */
+.columns-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Each stat cell */
+.columns-stats > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* The prominent number */
+.columns-stats > div > div h2 {
+  margin: 0;
+  color: var(--brand-navy);
+  font-family: var(--heading-font-family);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* The uppercase label below the number */
+.columns-stats > div > div p {
+  margin: 8px 0 0;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@media (width >= 900px) {
+  /* Three across, evenly distributed and centered */
+  .columns-stats > div {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 4px 0;
+  }
+
+  .columns-stats > div > div {
+    flex: 1 1 0;
+  }
+
+  .columns-stats > div > div h2 {
+    font-size: 50px;
+  }
+}

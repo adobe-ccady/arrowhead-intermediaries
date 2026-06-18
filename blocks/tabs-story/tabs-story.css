@@ -1,0 +1,166 @@
+/* Block: tabs-story -- "Our Story" tabs section.
+ * Source layout: a vertical, text-only tab strip on the left (no fill / no
+ * borders) with a +/- toggle affordance; the active panel (image + body copy)
+ * sits to the right. Active tab = bold dark text + filled "-" marker; inactive
+ * tab = bold muted-gray text + "+" marker. Values from source computed styles
+ * and the source screenshot. */
+
+.tabs-story {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- Tab strip --- */
+.tabs-story .tabs-story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-story .tabs-story-list button.tabs-story-tab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 15px 0;
+  background: none;
+  color: #b9b5a3;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+/* +/- toggle marker */
+.tabs-story .tabs-story-list button.tabs-story-tab::after {
+  content: '+';
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  color: #b9b5a3;
+}
+
+.tabs-story .tabs-story-list button.tabs-story-tab[aria-selected='true'] {
+  color: var(--text-color);
+  cursor: default;
+}
+
+.tabs-story .tabs-story-list button.tabs-story-tab[aria-selected='true']::after {
+  content: '\2212'; /* minus sign */
+  color: var(--background-color);
+  background-color: var(--text-color);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* --- Panel --- */
+.tabs-story .tabs-story-panel {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs-story .tabs-story-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* inner content wrapper holds the three <p>: heading, image, body text */
+.tabs-story .tabs-story-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.tabs-story .tabs-story-panel picture {
+  display: block;
+  line-height: 0;
+}
+
+.tabs-story .tabs-story-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.tabs-story .tabs-story-panel p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--text-color);
+  text-align: left;
+}
+
+/* tab label paragraph has no margin (inherits tab button styling) */
+.tabs-story .tabs-story-list button.tabs-story-tab p {
+  margin: 0;
+}
+
+/* the first <p> duplicates the tab title -> hide it (source hides it too) */
+.tabs-story .tabs-story-panel > div > p:first-child {
+  display: none;
+}
+
+/* the <p> wrapping the image keeps its natural size */
+.tabs-story .tabs-story-panel > div > p:nth-child(2) {
+  flex: 0 0 auto;
+}
+
+/* --- Desktop: tab strip left, panel right; image + text side by side --- */
+@media (width >= 900px) {
+  .tabs-story {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tabs-story .tabs-story-list {
+    flex: 0 0 360px;
+    width: 360px;
+  }
+
+  .tabs-story .tabs-story-list button.tabs-story-tab {
+    padding: 15px 0;
+    font-size: var(--heading-font-size-m);
+  }
+
+  .tabs-story .tabs-story-panel {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .tabs-story .tabs-story-panel > div {
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .tabs-story .tabs-story-panel p {
+    flex: 1 1 auto;
+  }
+
+  .tabs-story .tabs-story-panel > div > p:nth-child(2) {
+    flex: 0 0 398px;
+    max-width: 398px;
+  }
+}

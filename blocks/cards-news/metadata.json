@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-17T20:06:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/",
+    "originPage": "Arrowhead Intermediaries homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "news",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "3 cards, each with cover image + category + headline + date + read link",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news / article card grids with cover photo, category, headline and date",
+      "blog post listings"
+    ],
+    "notSuitableFor": [
+      "logo / division brand cards",
+      "side-by-side text banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-17T20:06:00.000Z"
+  }
+}

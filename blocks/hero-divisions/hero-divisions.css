@@ -1,0 +1,121 @@
+/*
+ * hero-divisions: two-column split hero.
+ *   Left  — white panel: headline + intro copy (dark text).
+ *   Right — aerial photo with three division links as stacked white
+ *           cards, centered vertically over the image.
+ *
+ * Source uses a background video on the right column; the page's featured
+ * aerial photo is used as a static image instead.
+ */
+
+/* Full-width: override the EDS section max-width / padding wrapper. */
+.hero-divisions-container,
+.hero-divisions-wrapper {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-divisions {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+/* Left: white content panel. */
+.hero-divisions .hero-divisions-content {
+  box-sizing: border-box;
+  padding: 48px 24px;
+  background-color: var(--background-color);
+}
+
+.hero-divisions .hero-divisions-content h1 {
+  margin: 0 0 0.5em;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1.15;
+}
+
+.hero-divisions .hero-divisions-content p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Right: aerial photo with stacked white division cards. */
+.hero-divisions .hero-divisions-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-sizing: border-box;
+  min-height: 320px;
+  padding: 32px 24px;
+  background-image:
+    url("https://arrowheadintermediaries.com/wp-content/uploads/2025/08/aerial-home-featured-scaled-1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* Division cards: white translucent boxes with navy uppercase label. */
+.hero-divisions .hero-divisions-cards a.hero-divisions-card:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  min-height: 72px;
+  margin: 0;
+  padding: 18px 24px;
+  border: none;
+  border-radius: 0;
+  background-color: rgb(255 255 255 / 88%);
+  color: var(--brand-navy, #1b2a51);
+  font-size: var(--heading-font-size-m);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: normal;
+  transition: background-color 0.2s ease;
+}
+
+.hero-divisions .hero-divisions-cards a.hero-divisions-card:hover,
+.hero-divisions .hero-divisions-cards a.hero-divisions-card:focus {
+  background-color: rgb(255 255 255 / 100%);
+  color: var(--brand-navy, #1b2a51);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .hero-divisions {
+    flex-direction: row;
+    min-height: 560px;
+  }
+
+  .hero-divisions .hero-divisions-content {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px;
+  }
+
+  .hero-divisions .hero-divisions-cards {
+    flex: 1 1 50%;
+    min-height: 0;
+    padding: 64px 48px;
+  }
+}
