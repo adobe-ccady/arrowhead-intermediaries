@@ -44,9 +44,9 @@ function toggleMenu(nav, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   let fragment = await loadFragment(navPath);
-  // fallback to local content path for `aem up` preview when metadata is absent
+  // fallback to the local `aem up` preview path where content lives under /content
   if (!fragment) {
     fragment = await loadFragment('/content/nav');
   }
