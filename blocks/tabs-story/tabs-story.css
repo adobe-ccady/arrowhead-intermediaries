@@ -116,8 +116,16 @@
   margin: 0;
 }
 
-/* the first <p> duplicates the tab title -> hide it (source hides it too) */
-.tabs-story .tabs-story-panel > div > p:first-child {
+/* The first cell duplicates the tab title -> hide it. The local preview
+ * renders it as a <p>; AEM (content_headingType=h3) renders it as an <h3>,
+ * so hide whichever element type comes first. */
+.tabs-story .tabs-story-panel > div > p:first-child,
+.tabs-story .tabs-story-panel > div > h1:first-child,
+.tabs-story .tabs-story-panel > div > h2:first-child,
+.tabs-story .tabs-story-panel > div > h3:first-child,
+.tabs-story .tabs-story-panel > div > h4:first-child,
+.tabs-story .tabs-story-panel > div > h5:first-child,
+.tabs-story .tabs-story-panel > div > h6:first-child {
   display: none;
 }
 
