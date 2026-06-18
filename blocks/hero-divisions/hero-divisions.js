@@ -20,12 +20,23 @@ export default function decorate(block) {
   const right = document.createElement('div');
   right.className = 'hero-divisions-cards';
 
+  // A division card is a "link-only" element: its entire text content is a
+  // single anchor (e.g. <p><a>Programs</a></p> or a bare <a>). Everything else
+  // (heading, intro copy) is left content. Scanning by this rule — rather than
+  // assuming a fixed child order — tolerates the DOM differences between the
+  // local preview and AEM's richtext rendering.
+  const cardify = (link) => {
+    link.classList.add('hero-divisions-card');
+    right.append(link);
+  };
+
   [...inner.children].forEach((el) => {
-    const link = el.querySelector(':scope > a');
-    const isLinkOnly = el.tagName === 'P' && link && el.textContent.trim() === link.textContent.trim();
-    if (isLinkOnly) {
-      link.classList.add('hero-divisions-card');
-      right.append(link);
+    const anchors = el.tagName === 'A' ? [el] : [...el.querySelectorAll(':scope > a')];
+    const textIsLinksOnly = anchors.length > 0
+      && el.textContent.trim() === anchors.map((a) => a.textContent.trim()).join('');
+    if (textIsLinksOnly) {
+      // One or more anchors with no other text — treat each as a division card.
+      anchors.forEach(cardify);
     } else {
       left.append(el);
     }

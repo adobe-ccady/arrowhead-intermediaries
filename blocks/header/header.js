@@ -72,6 +72,16 @@ export default async function decorate(block) {
       const bc = brandLink.closest('.button-container');
       if (bc) bc.className = '';
     }
+    // AEM renders the brand as a bare logo image (no link). Wrap it in a
+    // home link so the logo behaves the same as in the local preview.
+    const brandImg = navBrand.querySelector('picture, img');
+    if (brandImg && !navBrand.querySelector('a')) {
+      const homeLink = document.createElement('a');
+      homeLink.href = '/';
+      homeLink.setAttribute('title', 'Arrowhead Intermediaries');
+      brandImg.replaceWith(homeLink);
+      homeLink.append(brandImg);
+    }
   }
 
   // sections: hoist the menu <ul> to be a direct child of <nav> so the
