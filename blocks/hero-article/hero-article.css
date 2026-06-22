@@ -1,0 +1,104 @@
+/* hero-article: news article header.
+ *   Full-bleed cover banner image at the top (workplace photo + diagonal
+ *   navy/tan overlay with the logo and "Leadership Appointment" baked in),
+ *   followed by a small uppercase navy category label and the large bold navy
+ *   headline. Values follow the source layout and brand palette. */
+
+/* Full-width: override the EDS section max-width / padding wrapper so the
+ * cover image spans edge to edge. Selector is scoped under `main` and the
+ * section container to beat `main > .section > div { max-width: 1200px }`. */
+main .section.hero-article-container,
+main .section.hero-article-container > .hero-article-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  min-height: unset;
+}
+
+/* Cover image is constrained to the same column width as the text below it
+ * (not a background overlay), so its left/right edges align with the label,
+ * headline, and body copy. */
+.hero-article .hero-article-image {
+  position: static;
+  z-index: auto;
+  inset: auto;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-article .hero-article-image p {
+  margin: 0;
+}
+
+.hero-article .hero-article-image picture {
+  position: static;
+  z-index: auto;
+  inset: auto;
+  display: block;
+}
+
+.hero-article .hero-article-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Text group: category label + headline, constrained to the content width
+ * and offset from the full-bleed image above. */
+.hero-article .hero-article-content {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+
+/* Category label / eyebrow — small uppercase navy. */
+.hero-article .hero-article-content p:first-child,
+.hero-article .hero-article-content .hero-article-label {
+  margin: 0;
+  font-size: var(--heading-size-xs, 14px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-navy, #1b2a51);
+}
+
+/* Headline — large bold navy, sans-serif. */
+.hero-article .hero-article-content h1 {
+  margin: 0;
+  max-width: 1100px;
+  font-family: var(--heading-font-family, var(--body-font-family));
+  font-size: var(--heading-size-xl, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--brand-navy, #1b2a51);
+}
+
+@media (width >= 900px) {
+  .hero-article .hero-article-image {
+    padding: 0 32px;
+  }
+
+  .hero-article .hero-article-content {
+    padding: 48px 32px 28px;
+  }
+
+  .hero-article .hero-article-content h1 {
+    font-size: var(--heading-size-xxl, 48px);
+  }
+}

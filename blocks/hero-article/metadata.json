@@ -1,0 +1,42 @@
+{
+  "variantName": "hero-article",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-22T21:57:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://arrowheadintermediaries.com/news/arrowhead-intermediaries-appoints-benjamin-auray-as-chief-commercial-officer/",
+    "originPage": "Arrowhead Intermediaries news article (Benjamin Auray appointment)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "article-header",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "cover image + category label + headline",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news article headers",
+      "blog post headers",
+      "press release headers with cover image and category label"
+    ],
+    "notSuitableFor": [
+      "homepage full-bleed media hero (use hero-divisions)",
+      "text-only heroes without a cover image",
+      "card/listing teasers (use cards-news)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/news/arrowhead-intermediaries-appoints-benjamin-auray-as-chief-commercial-officer/index",
+      "/news/arrowhead-intermediaries-appoints-katie-davis-as-chief-marketing-officer/index"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-06-22T22:35:00.000Z"
+  }
+}

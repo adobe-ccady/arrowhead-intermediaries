@@ -140,6 +140,45 @@
           ]
         }
       ]
+    },
+    {
+      "name": "news-article",
+      "urls": [
+        "https://arrowheadintermediaries.com/news/arrowhead-intermediaries-appoints-benjamin-auray-as-chief-commercial-officer/"
+      ],
+      "representativeUrl": "https://arrowheadintermediaries.com/news/arrowhead-intermediaries-appoints-benjamin-auray-as-chief-commercial-officer/",
+      "coverageGaps": [],
+      "description": "Arrowhead Intermediaries news article: hero-article header (cover image + category label + headline) followed by default-content article body (deck, portrait, paragraphs, media contacts)",
+      "blocks": [
+        {
+          "name": "hero-article",
+          "instances": [
+            ".elementor-element-65d19ab .e-con-inner"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "article-header",
+          "name": "article-header",
+          "selector": ".elementor-element-65d19ab .e-con-inner",
+          "style": null,
+          "blocks": [
+            "hero-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "article-body",
+          "name": "article-body",
+          "selector": ".elementor-element-202beff.elementor-widget-theme-post-content",
+          "style": "article-body",
+          "blocks": [],
+          "defaultContent": [
+            ".elementor-element-202beff.elementor-widget-theme-post-content"
+          ]
+        }
+      ]
     }
   ]
 }

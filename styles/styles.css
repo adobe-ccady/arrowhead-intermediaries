@@ -332,3 +332,74 @@ main .section.divisions-background-image {
   background-position: center center;
   background-size: cover;
 }
+
+/*
+ * News article body. Uses the standard section column (main > .section > div)
+ * so the subheadline, body copy, headshot, and the hero header/image above all
+ * share one consistent column width and left edge, matching the source layout.
+ * The deck renders in bold italic; the appointee headshot floats to the right
+ * of the opening paragraph with a small gray caption beneath it.
+ */
+main .section.article-body .default-content-wrapper {
+  overflow: hidden; /* contain the floated headshot */
+}
+
+/* Subheadline / deck: bold italic navy. */
+main .section.article-body h4 {
+  margin: 0 0 24px;
+  color: var(--brand-navy, #1b2a51);
+  font-style: italic;
+  font-weight: 700;
+  font-size: var(--heading-size-m, 22px);
+  line-height: 1.3;
+}
+
+main .section.article-body h4 em {
+  font-style: italic;
+}
+
+/* Body paragraphs (base). Declared before the more specific :has() rules below
+ * to satisfy no-descending-specificity. */
+main .section.article-body p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+main .section.article-body a:any-link {
+  color: var(--brand-navy, #1b2a51);
+  text-decoration: underline;
+}
+
+/* Headshot: the portrait is authored as a standalone image paragraph followed
+ * by its caption paragraph. Float the image right; the caption sits beneath it
+ * in small gray text. The image paragraph is the first <p> that contains an
+ * image; the caption is the <p> immediately after it. */
+main .section.article-body p:has(> picture),
+main .section.article-body p:has(> img) {
+  float: right;
+  width: 262px;
+  max-width: 40%;
+  margin: 4px 0 8px 28px;
+}
+
+main .section.article-body p:has(> picture) img,
+main .section.article-body p:has(> img) img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Caption: the paragraph right after the floated image paragraph. */
+main .section.article-body p:has(> picture) + p,
+main .section.article-body p:has(> img) + p {
+  float: right;
+  clear: right;
+  width: 262px;
+  max-width: 40%;
+  margin: 0 0 20px 28px;
+  color: #6b6b6b;
+  font-size: var(--heading-size-xs, 14px);
+  font-style: italic;
+  line-height: 1.4;
+  text-align: left;
+}
